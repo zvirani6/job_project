@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upwork Jobs Analysis</title>
+    <script src="JobAnalysis.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .job-list {
+        list-style-type: none;
+        padding: 0;
+      }
+      .job-item {
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      .filters,
+      .sort-options {
+        margin-bottom: 20px;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Upwork Jobs Analysis</h1>
+      <div class="upload-section">
+        <label for="fileInput">Upload JSON File:</label>
+        <input type="file" id="fileInput" />
+        <div id="error-message" class="error"></div>
+      </div>
+
+      <div class="filters">
+        <label for="levelFilter">Filter by Level:</label>
+        <select id="levelFilter">
+          <option value="">All</option>
+        </select>
+
+        <label for="typeFilter">Filter by Type:</label>
+        <select id="typeFilter">
+          <option value="">All</option>
+        </select>
+
+        <label for="skillFilter">Filter by Skill:</label>
+        <select id="skillFilter">
+          <option value="">All</option>
+        </select>
+      </div>
+
+      <div class="sort-options">
+        <label for="sortBy">Sort by:</label>
+        <select id="sortBy">
+          <option value="">None</option>
+          <option value="title">Title</option>
+          <option value="posted">Posted Time</option>
+        </select>
+      </div>
+
+      <ul id="jobList" class="job-list"></ul>
+
+      <div id="jobDetails" style="display: none"></div>
+    </div>
+  </body>
+</html>
